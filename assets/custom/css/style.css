@@ -1,0 +1,72 @@
+body{
+background:#f5f5f5;
+}
+
+.col-no{
+    width:1%;
+    white-space:nowrap;
+    text-align:center;
+}
+
+.card{
+border-radius:10px;
+}
+
+.card-img-top{
+height:220px;
+object-fit:cover;
+}
+
+#carouselExample img{
+height:450px;
+object-fit:cover;
+border-radius:8px;
+}
+
+#calendar{
+background:white;
+padding:10px;
+border-radius:8px;
+}
+
+/* FULLCALENDAR FIX */
+.fc a,
+.fc-col-header-cell-cushion,
+.fc-daygrid-day-number{
+text-decoration:none !important;
+}
+
+.fc a {
+color:#333;
+}
+
+.fc-col-header-cell a {
+color:#0d6efd;
+font-weight:600;
+}
+
+.fc-daygrid-day-number{
+font-size:14px;
+font-weight:600;
+padding:4px;
+}
+
+.fc-event{
+border-radius:4px;
+font-size:12px;
+}
+
+#modalSesi div {
+    margin-bottom: 2px;
+}
+
+/* Hanya ol dengan class no-indent yang diatur */
+ol.no-indent {
+    margin: 0;               /* hilangkan margin luar */
+    padding: 0;              /* hilangkan padding kiri */
+    list-style-position: inside;  /* nomor muncul sejajar dengan teks */
+}
+ol.no-indent li {
+    margin: 0;               /* hilangkan margin li default */
+    padding: 0.2em 0;        /* jarak antar item, bisa diatur */
+}
