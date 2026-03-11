@@ -1,8 +1,8 @@
 <?php
 
 /* URL */
-// $base_url = "http://10.255.244.50/esewa/";
-$base_url = "http://localhost/esewa/";
+$base_url = "http://10.255.244.50/esewa/";
+// $base_url = "http://localhost/esewa/";
 
 /* Database */
 $db_host = "localhost";
