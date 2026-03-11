@@ -1,5 +1,5 @@
 <?php
-include(__DIR__ . "/../config.php");
+include(__DIR__ . "/../config/database.php");
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

@@ -11,7 +11,7 @@ include "includes/navbar.php";
             <div class="row mb-3">
                 
                 <?php
-                    include "config.php"; // koneksi database
+                    include "config/database.php"; // koneksi database
 
                     // Ambil daftar gedung dari database
                     $gedungQuery = mysqli_query($conn, "SELECT id, nama_gedung, gambar FROM gedung ORDER BY id ASC");

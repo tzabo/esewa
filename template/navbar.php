@@ -1,3 +1,7 @@
+<?php
+include(__DIR__ . "/../config/database.php");
+?>
+
         <!-- ================= NAVBAR ================= -->
         <div id="main" class='layout-navbar navbar-fixed'>
             <header>

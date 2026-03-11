@@ -23,10 +23,8 @@ object-fit:cover;
 border-radius:8px;
 }
 
-#calendar{
-background:white;
-padding:10px;
-border-radius:8px;
+#calendar {
+    min-height: 650px;
 }
 
 /* FULLCALENDAR FIX */
@@ -54,6 +52,33 @@ padding:4px;
 .fc-event{
 border-radius:4px;
 font-size:12px;
+}
+
+#modalBodyContent td {
+    padding:6px 0;
+}
+
+#eventModal .carousel:has(.carousel-item:only-child) .carousel-control-prev,
+#eventModal .carousel:has(.carousel-item:only-child) .carousel-control-next{
+display:none;
+}
+
+#eventCarousel .carousel-control-prev-icon{
+background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23435ebe' viewBox='0 0 16 16'%3e%3cpath d='M11 1 3 8l8 7'/%3e%3c/svg%3e");
+}
+
+#eventCarousel .carousel-control-next-icon{
+background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23435ebe' viewBox='0 0 16 16'%3e%3cpath d='M5 1l8 7-8 7'/%3e%3c/svg%3e");
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+opacity:0.6;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover{
+opacity:1;
 }
 
 #modalSesi div {

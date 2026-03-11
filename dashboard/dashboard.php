@@ -1,8 +1,7 @@
 <?php
 
 include "../config/auth.php";
-include "../config/database.php";
-
+include "../config/database.php"; // koneksi database
 include "../template/header.php";
 include "../template/navbar.php";
 include "../template/sidebar.php";
@@ -14,45 +13,96 @@ include "../template/sidebar.php";
                 <div class="page-heading">
                     <div class="page-title">
                         <div class="row">
-                            <!-- <div class="col-12 col-md-6 order-md-1 order-last">
-                                <h3>Vertical Layout with Navbar</h3>
-                                <p class="text-subtitle text-muted">Navbar will appear on the top of the page.</p>
-                            </div> -->
-                            <!-- <div class="col-12 col-md-6 order-md-2 order-first">
-                                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="dashboard.php">Menu</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                                    </ol>
-                                </nav>
-                            </div> -->
+                            
                         </div>
                     </div>
                     <section class="section">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">About Vertical Navbar</h4>
-                            </div>
-                            <div class="card-body">
-                                <p>Vertical Navbar is a layout option that you can use with Mazer. </p>
+                        <div class="container mt-4">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- FILTER GEDUNG -->
+                                    <div class="row mb-3">
+                                        
+                                        <?php
+                                            
+                                            // Ambil daftar gedung dari database
+                                            $gedungQuery = mysqli_query($conn, "SELECT id, nama_gedung, gambar FROM gedung ORDER BY id ASC");
+                                            $gedungs = [];
+                                            while($row = mysqli_fetch_assoc($gedungQuery)) {
+                                                $gedungs[] = $row;
+                                            }
+                                        ?>
 
-                                <p>In case you want the navbar to be sticky on top while scrolling, add <code>.navbar-fixed</code> class alongside with <code>.layout-navbar</code> class.</p>
+                                        <div class="col-md-5">
+                                            <select id="filterGedung" class="form-select">
+                                                <option value="">Jadwal Semua Gedung</option>
+                                                <?php foreach($gedungs as $g): ?>
+                                                    <option value="<?= $g['id'] ?>">Jadwal <?= htmlspecialchars($g['nama_gedung']) ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- KOLOM KIRI : CAROUSEL -->
+                                    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <?php foreach($gedungs as $index => $g): ?>
+                                                <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>" data-gedung="<?= $g['id'] ?>">
+                                                    <img src="../assets/custom/img/<?= htmlspecialchars($g['gambar']) ?>" class="d-block w-100" alt="<?= htmlspecialchars($g['nama_gedung']) ?>" loading="eager">
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            <!-- KOLOM KANAN : FULLCALENDAR -->
+                                <div class="col-md-6">
+                                    <div id="calendar"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Dummy Text</h4>
-                            </div>
-                            <div class="card-body">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis tincidunt tempus. Duis vitae facilisis enim, at rutrum lacus. Nam at nisl ut ex egestas placerat sodales id quam. Aenean sit amet nibh quis lacus pellentesque venenatis vitae at justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse venenatis tincidunt odio ut rutrum. Maecenas ut urna venenatis, dapibus tortor sed, ultrices justo. Phasellus scelerisque, nibh quis gravida venenatis, nibh mi lacinia est, et porta purus nisi eget nibh. Fusce pretium vestibulum sagittis. Donec sodales velit cursus convallis sollicitudin. Nunc vel scelerisque elit, eget facilisis tellus. Donec id molestie ipsum. Nunc tincidunt tellus sed felis vulputate euismod.
-                                </p>
-                                <p>
-                                    Proin accumsan nec arcu sit amet volutpat. Proin non risus luctus, tempus quam quis, volutpat orci. Phasellus commodo arcu dui, ut convallis quam sodales maximus. Aenean sollicitudin massa a quam fermentum, et efficitur metus convallis. Curabitur nec laoreet ipsum, eu congue sem. Nunc pellentesque quis erat at gravida. Vestibulum dapibus efficitur felis, vel luctus libero congue eget. Donec mollis pellentesque arcu, eu commodo nunc porta sit amet. In commodo augue id mauris tempor, sed dignissim nulla facilisis. Ut non mattis justo, ut placerat justo. Vestibulum scelerisque cursus facilisis. Suspendisse velit justo, scelerisque ac ultrices eu, consectetur ac odio.
-                                </p>                
-                                <p>
-                                    In pharetra quam vel lobortis fermentum. Nulla vel risus ut sapien porttitor volutpat eu ac lorem. Vestibulum porta elit magna, ut ultrices sem fermentum ut. Vestibulum blandit eros ut imperdiet porttitor. Pellentesque tempus nunc sed augue auctor eleifend. Sed nisi sem, lobortis eget faucibus placerat, hendrerit vitae elit. Vestibulum elit orci, pretium vel libero at, imperdiet congue lectus. Praesent rutrum id turpis non aliquam. Cras dignissim, metus vitae aliquam faucibus, elit augue dignissim nulla, bibendum consectetur leo libero a tortor. Vestibulum non tincidunt nibh. Ut imperdiet elit vel vehicula ultricies. Nulla maximus justo sit amet fringilla laoreet. Aliquam malesuada diam in augue mattis aliquam. Pellentesque id eros dignissim, dapibus sem ac, molestie dolor. Mauris purus lacus, tempor sit amet vestibulum vitae, ultrices eu urna. 
-                                </p>
+
+                            <!-- MODAL EVENT (letakkan di sini) -->
+                            <div class="modal fade text-left" id="eventModal" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered modal-md">
+                                    <div class="modal-content">
+
+                                        <!-- HEADER PRIMARY -->
+                                        <div class="modal-header bg-primary justify-content-center">
+                                            <h5 class="modal-title text-white text-center w-100">
+                                                <b>Detail Acara</b> <span id="eventCounter"></span>
+                                            </h5>
+                                        </div>
+
+                                        <!-- BODY -->
+                                        <div class="modal-body">
+                                            <div id="eventCarousel" class="carousel slide">
+                                                <div class="carousel-inner" id="modalBodyContent">
+                                                    <!-- event dari JS -->
+                                                </div>
+
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon"></span>
+                                                </button>
+
+                                                <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- FOOTER -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">Tutup</button>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>
