@@ -1,77 +1,115 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- ================= SIDEBAR ================= -->
+    <div id="app">
+        <div id="sidebar">
+            <div class="sidebar-wrapper active">
+                <div class="sidebar-header position-relative">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="logo">
+                            <h2 class="text-center"><b>SIGAP</b></h2>
+                            <!-- <a href="dashboard.php"><img src="./assets/compiled/svg/logo.svg" alt="Logo" srcset=""></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class="sidebar-title text-center">Menu</li>
+                        
+                        <li
+                            class="sidebar-item  ">
+                            <a href="index.html" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        
+                        <li
+                            class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Extra Components</span>
+                            </a>
+                            
+                            <ul class="submenu ">
+                                <li class="submenu-item  ">
+                                    <a href="extra-component-avatar.html" class="submenu-link">Avatar</a>
+                                </li>
+                                
+                                <li class="submenu-item  ">
+                                    <a href="extra-component-divider.html" class="submenu-link">Divider</a>
+                                </li>
+                                
+                                <li class="submenu-item  ">
+                                    <a href="extra-component-date-picker.html" class="submenu-link">Date Picker</a>
+                                </li>
+                                
+                                <li class="submenu-item  ">
+                                    <a href="extra-component-sweetalert.html" class="submenu-link">Sweet Alert</a>
+                                </li>
+                                
+                                <li class="submenu-item  ">
+                                    <a href="extra-component-toastify.html" class="submenu-link">Toastify</a>
+                                </li>
+                                
+                                <li class="submenu-item  ">
+                                    <a href="extra-component-rating.html" class="submenu-link">Rating</a>
+                                </li>
+                            </ul>
+                        </li>
 
-<a href="#" class="brand-link">
-
-<span class="brand-text font-weight-light">
-E-Sewa
-</span>
-
-</a>
-
-<div class="sidebar">
-
-<nav>
-
-<ul class="nav nav-pills nav-sidebar flex-column">
-
-<li class="nav-item">
-<a href="../dashboard/dashboard.php" class="nav-link">
-<i class="nav-icon fas fa-chart-bar"></i>
-<p>Dashboard</p>
-</a>
-</li>
-
-<?php if($_SESSION['role']=='superadmin'){ ?>
-
-<li class="nav-item">
-<a href="../superadmin/user.php" class="nav-link">
-<i class="nav-icon fas fa-users"></i>
-<p>User</p>
-</a>
-</li>
-
-<li class="nav-item">
-<a href="../superadmin/gedung.php" class="nav-link">
-<i class="nav-icon fas fa-building"></i>
-<p>Gedung</p>
-</a>
-</li>
-
-<?php } ?>
-
-<?php if($_SESSION['role']=='validator'){ ?>
-
-<li class="nav-item">
-<a href="../validator/validasi_sewa.php" class="nav-link">
-<i class="nav-icon fas fa-check"></i>
-<p>Validasi Sewa</p>
-</a>
-</li>
-
-<?php } ?>
-
-<?php if($_SESSION['role']=='kecamatan'){ ?>
-
-<li class="nav-item">
-<a href="../kecamatan/gedung.php" class="nav-link">
-<i class="nav-icon fas fa-building"></i>
-<p>Gedung</p>
-</a>
-</li>
-
-<li class="nav-item">
-<a href="../kecamatan/sewa.php" class="nav-link">
-<i class="nav-icon fas fa-file"></i>
-<p>Data Sewa</p>
-</a>
-</li>
-
-<?php } ?>
-
-</ul>
-
-</nav>
-
-</div>
-
-</aside>
+                        <li class="sidebar-title text-center">Forms &amp; Tables</li>
+                        
+                        <li
+                            class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-pen-fill"></i>
+                                <span>Form Editor</span>
+                            </a>
+                            
+                            <ul class="submenu ">
+                                <li class="submenu-item  ">
+                                    <a href="form-editor-quill.html" class="submenu-link">Quill</a>
+                                </li>
+                                
+                                <li class="submenu-item  ">
+                                    <a href="form-editor-ckeditor.html" class="submenu-link">CKEditor</a>
+                                </li>
+                                
+                                <li class="submenu-item  ">
+                                    <a href="form-editor-summernote.html" class="submenu-link">Summernote</a>
+                                </li>
+                                
+                                <li class="submenu-item  ">
+                                    <a href="form-editor-tinymce.html" class="submenu-link">TinyMCE</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li
+                            class="sidebar-item  ">
+                            <a href="table.html" class='sidebar-link'>
+                                <i class="bi bi-grid-1x2-fill"></i>
+                                <span>Table</span>
+                            </a>
+                        </li>
+                        
+                        <li
+                            class="sidebar-item has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                                <span>Datatables</span>
+                            </a>
+                            
+                            <ul class="submenu ">
+                                <li class="submenu-item  ">
+                                    <a href="table-datatable.html" class="submenu-link">Datatable</a>
+                                </li>
+                                
+                                <li class="submenu-item  ">
+                                    <a href="table-datatable-jquery.html" class="submenu-link">Datatable (jQuery)</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>

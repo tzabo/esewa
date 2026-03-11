@@ -21,6 +21,7 @@ $events[] = [
 "start" => $row['tanggal'],
 
 "extendedProps" => [
+    "nama" => $row['nama_pemesan'],
     "waktu" => $row['info_sesi'],
     "durasi" => $row['durasi_jam']." Jam",
     "gedung" => "Gedung ".$row['gedung_id'],

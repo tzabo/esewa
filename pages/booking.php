@@ -51,14 +51,11 @@ echo "<script>alert('Booking berhasil');</script>";
                 <div class="alert alert-danger">
                     <h5><b>PETUNJUK PEMESANAN</b></h5>
                     <ol style="padding-left: inherit;" align="justify">
-                    <li>Wajib Retribusi mengajukan permohonan dengan melampirkan foto kopi KTP dan mengisi formulir pernyataan yang ditujukan kepada Camat paling lambat 14 (empat belas) hari sebelum pelaksanaan</li>
-                    <li>Consectetur adipiscing elit</li>
-                    <li>Integer molestie lorem at massa</li>
-                    <li>Facilisis in pretium nisl aliquet</li>
-                    <li>Nulla volutpat aliquam velit</li>
-                    <li>Faucibus porta lacus fringilla vel</li>
-                    <li>Aenean sit amet erat nunc</li>
-                    <li>Eget porttitor lorem</li>
+                        <li>Penyewa mengajukan pemesanan dengan cara datang langsung ke Kecamatan pada jam kerja (07.30 - 16.00) untuk <b>mengisi formulir pernyataan dan melampirkan fotokopi KTP paling lambat 14 (empat belas) hari sebelum pelaksanaan acara</b>.</li>
+                        <li>Apabila permohonan benar dan sesuai, maka <b>akan diploting jadwal penggunaan GSG dan dilanjut dengan mencetak Surat Keterangan Retribusi Daerah (SKRD)</b>.</li>
+                        <li>Penyewa wajib melakukan pembayaran retribusi GSG berdasarkan cetak SKRD dan <b>konfirmasi ke petugas di Kecamatan dengan menyertakan foto bukti pembayaran paling lambat 7 (tujuh) hari sebelum waktu pelaksanaan</b>.</li>
+                        <li>Apabila <b>dalam jangka 7 (tujuh) hari setelah cetak SKRD tidak segera melakukan pembayaran</b>, maka pemesanan akan langsung dibatalkan.</li>
+                        <li>Kecamatan akan <b>menerbitkan surat pemakaian GSG dan menyerahkan Surat Setoran Retribusi Daerah (SSRD) kepada penyewa paling lambat 1 (satu) hari sebelum pelaksanaan acara</b>.</li>
                     </ol>
                 </div>
             </div>
@@ -192,6 +189,22 @@ echo "<script>alert('Booking berhasil');</script>";
                                 <div class="mt-3">
                                     <label><b>Estimasi Orang <span class="text-danger">*</span></b></label>
                                     <input type="text" name="peserta" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div>
+                                    <label><b>Upload Formulir <span class="text-danger">*</span></b></label>
+                                    <input type="file" name="upload1" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div>
+                                    <label><b>Upload KTP <span class="text-danger">*</span></b></label>
+                                    <input type="file" name="upload2" class="form-control" required>
                                 </div>
                             </div>
                         </div>

@@ -5,19 +5,6 @@ include "includes/navbar.php";
 
 <div class="container mt-4">
 
-    <!-- FILTER GEDUNG -->
-    <!-- <div class="row mb-3">
-        <div class="col-md-4">
-            <select id="filterGedung" class="form-select">
-                <option value="">Semua Gedung</option>
-                <option value="1">Gedung 1</option>
-                <option value="2">Gedung 2</option>
-                <option value="3">Gedung 3</option>
-                <option value="4">Gedung 4</option>
-            </select>
-        </div>
-    </div> -->
-
     <div class="row">
         <div class="col-md-6">
             <!-- FILTER GEDUNG -->
@@ -47,18 +34,6 @@ include "includes/navbar.php";
             <!-- KOLOM KIRI : CAROUSEL -->
             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <!-- <div class="carousel-item active" data-gedung="1">
-                        <img src="assets/custom/img/Gedung1.jpg" class="d-block w-100" alt="1" loading="eager">
-                    </div>
-                    <div class="carousel-item" data-gedung="2">
-                        <img src="assets/custom/img/Gedung2.jpg" class="d-block w-100" alt="2" loading="eager">
-                    </div>
-                    <div class="carousel-item" data-gedung="3">
-                        <img src="assets/custom/img/Gedung3.jpg" class="d-block w-100" alt="3" loading="eager">
-                    </div>
-                    <div class="carousel-item" data-gedung="4">
-                        <img src="assets/custom/img/Gedung4.jpg" class="d-block w-100" alt="4" loading="eager">
-                    </div> -->
                     <?php foreach($gedungs as $index => $g): ?>
                         <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>" data-gedung="<?= $g['id'] ?>">
                             <img src="<?= htmlspecialchars($g['gambar']) ?>" class="d-block w-100" alt="<?= htmlspecialchars($g['nama_gedung']) ?>" loading="eager">
@@ -78,7 +53,6 @@ include "includes/navbar.php";
         <div class="col-md-6">
             <div id="calendar"></div>
         </div>
-
     </div>
 
     <!-- MODAL EVENT (letakkan di sini) -->
@@ -100,7 +74,7 @@ include "includes/navbar.php";
     <div class="text-center mt-3">
         <h4 style="margin:0; line-height:1.2;">Anda butuh tempat untuk pelaksanaan kegiatan Anda??</h4>
         <h1 style="color: red;">Yukk..ke <b>SIGAP</b> aja !</h1>
-        <a href="pages/booking.php" class="btn btn-lg btn-primary">PESAN SEKARANG        </a>
+        <a href="pages/booking.php" class="btn btn-lg btn-primary px-5 mt-3"><b>PESAN SEKARANG</b></a>
     </div>
 </div>
 

@@ -1,5 +1,5 @@
 <footer class="bg-dark text-white mt-5 p-4 text-center">
-© 2026 - S I G A P
+Copyright© 2026 - <b>IT Team BPKAD</b>
 </footer>
 
 <script src="assets/adminlte/dist/plugins/jquery/jquery.min.js"></script>

@@ -63,6 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         <th>${tanggalFormatted}</th>
                     </tr>
                     <tr>
+                        <td>Nama Pemesan</td>
+                        <td style="width:50px;">:</td>
+                        <th>${ev.extendedProps.nama || '-'}</th>
+                    </tr>
+                    <tr>
                         <td>Gedung</td>
                         <td style="width:50px;">:</td>
                         <th>${ev.extendedProps.gedung || '-'}</th>
